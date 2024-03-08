@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { IconButton } from "@mui/material";
 import { Search, Person, Menu } from "@mui/icons-material";
 import variables from "../styles/variables.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "../styles/Navbar.scss";
+import { Link } from "react-router-dom";
+import { setLogout } from "../redux/state";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [dropDownMenu, setDropDownMenu] = useState(false);
   const user = useSelector((state) => state.user);
   return (
@@ -17,7 +20,7 @@ const Navbar = () => {
       <div className="navbar_search">
         <input type="text" placeholder="Search . . ." />
         <IconButton>
-          <Search sx={{ color: variables.lightblue }} />
+          <Search sx={{ color: variables.lightgreen }} />
         </IconButton>
       </div>
 
@@ -32,11 +35,16 @@ const Navbar = () => {
           </a>
         )}
 
-        <button className="navbar_right_account">
-          <Menu sx={{ color: variables.lightblue }} />
+        <button
+          className="navbar_right_account"
+          onClick={() => setDropDownMenu(!dropDownMenu)}
+        >
+          <Menu sx={{ color: variables.lightgreen }} />
+
           {!user ? (
-            <Person sx={{ color: variables.lightblue }} />
+            <Person sx={{ color: variables.lightgreen }} />
           ) : (
+            /* if a user is logged in, displays their profile photo */
             <img
               src={`http://localhost:3001/${user.profileImagePath.replace(
                 "public",
@@ -47,6 +55,27 @@ const Navbar = () => {
             />
           )}
         </button>
+
+        {dropDownMenu && !user && (
+          <div className="navbar_right_accountmenu">
+            <Link to="/login">Log In</Link>
+            <Link to="/register">Sign Up</Link>
+          </div>
+        )}
+
+        {dropDownMenu && user && (
+          <div className="navbar_right_accountmenu">
+            <Link to="#">Trip List</Link>
+            <Link to="#">Wish List</Link>
+            <Link to="#">Property List</Link>
+            <Link to="#">Reservation List</Link>
+            <Link to="#">Publish my property</Link>
+
+            <Link to="/login" onClick={() => dispatch(setLogout())}>
+              Log Out
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

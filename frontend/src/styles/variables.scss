@@ -5,6 +5,7 @@ $grey: #bdb9b9;
 $darkgrey: #969393;
 $darkgreen: #87986a;
 $lightblue: #006da4;
+$lightgreen: rgb(6, 156, 6);
 
 @mixin shadow {
   box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.2);
@@ -12,7 +13,7 @@ $lightblue: #006da4;
 
 @mixin buttonStyle {
   padding: 10px 15px;
-  background-color: $darkgreen;
+  background-color: $lightgreen;
   border: none;
   font-size: 20px;
   font-weight: 600;
@@ -29,4 +30,6 @@ $lightblue: #006da4;
   grey: $grey;
   darkgrey: $darkgrey;
   darkgreen: $darkgreen;
+  lightblue: $lightblue;
+  lightgreen: $lightgreen;
 }

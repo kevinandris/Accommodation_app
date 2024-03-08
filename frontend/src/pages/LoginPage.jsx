@@ -33,7 +33,7 @@ const LoginPage = () => {
         );
         navigate("/");
       }
-    } catch (error) {
+    } catch (err) {
       console.log("Login failed", err.message);
     }
   };
