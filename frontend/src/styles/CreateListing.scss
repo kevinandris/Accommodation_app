@@ -10,7 +10,7 @@
   }
 
   h1 {
-    color: $blue;
+    color: #000000;
   }
 
   &_step1 {
@@ -33,7 +33,7 @@
 
     h3 {
       margin: 40px 0 20px;
-      color: $blue;
+      color: #000000;
     }
 
     .category-list {
@@ -82,8 +82,9 @@
       }
 
       .selected {
-        border: 2px solid $pinkred;
+        border: 2px solid $lightgreen;
         background-color: $lightgrey;
+        transition: all 0.5s ease-in;
       }
     }
 
@@ -123,8 +124,9 @@
       }
 
       .selected {
-        border: 2px solid $pinkred;
+        border: 2px solid $lightgreen;
         background-color: $lightgrey;
+        transition: all 0.5s ease-in;
       }
     }
 
@@ -246,8 +248,9 @@
       }
 
       .selected {
-        border: 2px solid $pinkred;
+        border: 2px solid $lightgreen;
         background-color: $lightgrey;
+        transition: all 0.5s ease-in;
       }
     }
 

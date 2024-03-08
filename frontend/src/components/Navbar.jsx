@@ -11,6 +11,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [dropDownMenu, setDropDownMenu] = useState(false);
   const user = useSelector((state) => state.user);
+
   return (
     <div className="navbar">
       <a href="/">
