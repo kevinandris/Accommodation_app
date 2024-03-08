@@ -13,8 +13,16 @@ const RegisterPage = () => {
     confirmPassword: "",
     profileImage: null,
   });
-
   console.log(formData);
+
+  const [passwordMatch, setPasswordMatch] = useState(true);
+  /* displaying the matched password sentence */
+  useEffect(() => {
+    setPasswordMatch(
+      formData.password === formData.confirmPassword ||
+        formData.confirmPassword === ""
+    );
+  }); /* Don't add [] to this useEffect otherwise the password match paragraph wont appear */
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -25,20 +33,11 @@ const RegisterPage = () => {
     });
   };
 
-  const [passwordMatch, setPasswordMatch] = useState(true);
-
-  /* displaying the matched password sentence */
-  useEffect(() => {
-    setPasswordMatch(
-      formData.password === formData.confirmPassword ||
-        formData.confirmPassword === ""
-    );
-  }); /* Don't add [] to this useEffect otherwise the password match paragraph wont appear */
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      /* FormData() needed because we have a file */
       const register_form = new FormData();
 
       for (var key in formData) {
@@ -57,8 +56,10 @@ const RegisterPage = () => {
       console.log("Registration failed", err.message);
     }
   };
+
   return (
     <div className="register">
+      <div className="image" />
       <div className="register_content">
         <form className="register_content_form" onSubmit={handleSubmit}>
           <input
