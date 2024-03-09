@@ -102,4 +102,17 @@ router.get("/", async (req, res) => {
   }
 });
 
+/* LISTING DETAILS */
+router.get("/:listingId", async (req, res) => {
+  try {
+    const { listingId } = req.params;
+    const listing = await Listing.findById(listingId);
+    res.status(200).json(listing);
+  } catch (error) {
+    res
+      .status(404)
+      .json({ message: "The listing can not be found!", error: error.message });
+  }
+});
+
 module.exports = router;
