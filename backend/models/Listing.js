@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-var Schema = mongoose.Schema;
 
 const ListingSchema = new mongoose.Schema(
   {
     creator: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
     category: {
@@ -47,13 +46,13 @@ const ListingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    BathroomCount: {
+    bathroomCount: {
       type: Number,
       required: true,
     },
     amenities: {
       type: Array,
-      default: [{}],
+      default: [],
     },
     listingPhotoPaths: [
       {
@@ -84,5 +83,5 @@ const ListingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-Listing = mongoose.model("Listing", ListingSchema);
+const Listing = mongoose.model("Listing", ListingSchema);
 module.exports = Listing;
