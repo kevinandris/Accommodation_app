@@ -66,11 +66,11 @@ const Navbar = () => {
 
         {dropDownMenu && user && (
           <div className="navbar_right_accountmenu">
-            <Link to="#">Trip List</Link>
-            <Link to="#">Wish List</Link>
-            <Link to="#">Property List</Link>
-            <Link to="#">Reservation List</Link>
-            <Link to="#">Publish my property</Link>
+            <Link to={`/${user._id}/trips`}>Trip List</Link>
+            <Link to={`/${user._id}/wishList`}>Wish List</Link>
+            <Link to="{``}">Property List</Link>
+            <Link to="{``}">Reservation List</Link>
+            <Link to="{``}">Publish my property</Link>
 
             <Link to="/login" onClick={() => dispatch(setLogout())}>
               Log Out
