@@ -133,7 +133,7 @@ const CreateListing = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log("Sorry, Your Listing is not successful", err.message);
+      console.log("Sorry, Your Listing is not successful", error.message);
     }
   };
 
