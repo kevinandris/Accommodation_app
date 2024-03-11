@@ -91,8 +91,9 @@ router.get("/", async (req, res) => {
       );
     } else {
       listings = await Listing.find().populate("creator");
-      res.status(200).json(listings);
     }
+
+    res.status(200).json(listings);
   } catch (err) {
     res.status(404).json({
       message: "Failed to fetch the listing property",
