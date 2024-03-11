@@ -1,46 +1,48 @@
 import React, { useEffect, useState } from "react";
 import "../styles/List.scss";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Navbar from "../components/Navbar";
-import ListingCard from "../components/ListingCard";
-import { setPropertyList } from "../redux/state";
+import { setListings } from "../redux/state";
 import Loader from "../components/Loader";
+import ListingCard from "../components/ListingCard";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const PropertyList = () => {
-  const [loading, setLoading] = useState(true);
-  const user = useSelector((state) => state.user);
-  const propertyList = user?.propertyList;
+const SearchPage = () => {
+  const [loading, setLoading] = useState();
+  const { search } = useParams();
+  const listings = useSelector((state) => state.listings);
   const dispatch = useDispatch();
 
-  const getPropertyList = async () => {
+  const getSearchListings = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/users/${user._id}/properties`,
+        `http://localhost:3001/properties/search/${search}`,
         {
           method: "GET",
         }
       );
+
       const data = await response.json();
-      dispatch(setPropertyList(data));
+      dispatch(setListings({ listings: data }));
       setLoading(false);
-    } catch (error) {
-      console.log("The properties cannot be fetched", err.message);
+    } catch (err) {
+      console.log("Fetching the list failed", err.message);
     }
   };
 
   useEffect(() => {
-    getPropertyList();
-  }, []);
+    getSearchListings();
+  }, [search]);
 
   return loading ? (
     <Loader />
   ) : (
     <>
       <Navbar />
-      <h1 className="title-list">Your Property List</h1>
+      <h1 className="title-list">{search}</h1>
       <div className="list">
-        {propertyList?.map(
+        {listings?.map(
           ({
             _id,
             creator,
@@ -73,4 +75,4 @@ const PropertyList = () => {
   );
 };
 
-export default PropertyList;
+export default SearchPage;

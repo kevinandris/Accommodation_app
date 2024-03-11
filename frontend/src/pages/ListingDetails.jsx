@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
+import Footer from "../components/Footer";
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -177,6 +178,7 @@ const ListingDetails = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

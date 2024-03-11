@@ -80,7 +80,7 @@ router.post("/create", upload.array("listingPhotos"), async (req, res) => {
   }
 });
 
-/* GET LISTINGS */
+/* GET LISTINGS BY CATEGORY */
 router.get("/", async (req, res) => {
   const qCategory = req.query.category;
   try {
@@ -96,6 +96,36 @@ router.get("/", async (req, res) => {
   } catch (err) {
     res.status(404).json({
       message: "Failed to fetch the listing property",
+      error: err.message,
+    });
+    console.log(err);
+  }
+});
+
+/* Get listings by search */
+router.get("/search/:search", async (req, res) => {
+  const { search } = req.params;
+
+  try {
+    let listings = [];
+
+    if (search === "all") {
+      listings = await Listing.find().populate("creator");
+    } else {
+      listings = await Listing.find({
+        $or: [
+          {
+            category: { $regex: search, $options: "i" },
+          },
+          { title: { $regex: search, $options: "i" } },
+        ],
+      }).populate("creator");
+    }
+
+    re.status(200).json(listings);
+  } catch (err) {
+    res.status(404).json({
+      message: "Failed to fetch the listings",
       error: err.message,
     });
     console.log(err);

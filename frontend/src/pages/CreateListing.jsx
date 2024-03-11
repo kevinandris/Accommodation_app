@@ -9,6 +9,7 @@ import { BiTrash } from "react-icons/bi";
 import { categories, facilities, types } from "../data";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const CreateListing = () => {
   const navigate = useNavigate();
@@ -544,6 +545,8 @@ const CreateListing = () => {
           </button>
         </form>
       </div>
+
+      <Footer />
     </>
   );
 };
