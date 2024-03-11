@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const SearchPage = () => {
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState(true);
   const { search } = useParams();
   const listings = useSelector((state) => state.listings);
   const dispatch = useDispatch();

@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="footer_right_info">
           <Email />
-          <p>kevinandris27@gmai.com</p>
+          <p>kevinandris27@gmail.com</p>
         </div>
       </div>
     </div>

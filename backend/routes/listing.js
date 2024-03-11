@@ -122,7 +122,7 @@ router.get("/search/:search", async (req, res) => {
       }).populate("creator");
     }
 
-    re.status(200).json(listings);
+    res.status(200).json(listings);
   } catch (err) {
     res.status(404).json({
       message: "Failed to fetch the listings",

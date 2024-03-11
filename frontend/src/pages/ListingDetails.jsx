@@ -15,6 +15,7 @@ const ListingDetails = () => {
   const { listingId } = useParams();
   const [listing, setListing] = useState();
   const navigate = useNavigate();
+  const user = useSelector((state) => state.user);
 
   const getListingDetails = async () => {
     try {
@@ -171,9 +172,20 @@ const ListingDetails = () => {
               <p>Start Date: {dateRange[0].startDate.toDateString()}</p>
               <p>End Date: {dateRange[0].endDate.toDateString()}</p>
 
-              <button className="button" type="submit" onClick={handleSubmit}>
-                BOOK NOW
-              </button>
+              {!user ? (
+                <button
+                  className="button"
+                  type="submit"
+                  onClick={handleSubmit}
+                  disabled
+                >
+                  BOOK NOW
+                </button>
+              ) : (
+                <button className="button" type="submit" onClick={handleSubmit}>
+                  BOOK NOW
+                </button>
+              )}
             </div>
           </div>
         </div>
