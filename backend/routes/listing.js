@@ -80,7 +80,7 @@ router.post("/create", upload.array("listingPhotos"), async (req, res) => {
   }
 });
 
-/* GET LISTINGS BY CATEGORY */
+/* Get listings by category */
 router.get("/", async (req, res) => {
   const qCategory = req.query.category;
   try {
