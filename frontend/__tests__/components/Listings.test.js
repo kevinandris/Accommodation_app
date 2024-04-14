@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import Listings from "../../src/components/Listings";
 
-
 test("fetches listings data and updates state", async () => {
   const mockListings = [
     {

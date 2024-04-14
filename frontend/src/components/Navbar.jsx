@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <a href="/">
-        <img src="/assets/keipy.png" alt="logo" />
+        <img src="/assets/k.png" alt="logo" />
       </a>
 
       <div className="navbar_search">

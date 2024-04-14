@@ -1,10 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import WishList from "../../src/pages/WishList";
 
-test("asd", () => {
-  render(<WishList />);
-});
-
 test("renders correct title", () => {
   render(<WishList />);
   const titleElement = screen.getByText("Your Wish List");

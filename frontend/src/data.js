@@ -1,88 +1,86 @@
-import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import {
+  TbAirConditioning,
+  TbGrill,
+  TbIroningSteam,
+  TbSnowflake,
+  TbWashMachine,
+} from "react-icons/tb";
 import {
   GiBarn,
+  GiBathtub,
   GiBoatFishing,
-  GiCactus,
-  GiCastle,
-  GiCaveEntrance,
-  GiForestCamp,
+  GiCampCookingPot,
+  GiDesert,
+  GiFamilyHouse,
+  GiFireplace,
+  GiGasStove,
+  GiHanger,
   GiIsland,
-  GiWindmill,
+  GiMountainCave,
+  GiPaperWindmill,
+  GiRoyalLove,
+  GiShower,
+  GiSoap,
+  GiTv,
+  GiUndergroundCave,
+  GiWashingMachine,
+  GiWorld,
 } from "react-icons/gi";
+import { FaUmbrellaBeach, FaCampground, FaSkiingNordic } from "react-icons/fa";
+import { FaPeopleGroup, FaCarTunnel } from "react-icons/fa6";
+import { BiSolidCastle, BiFridge, BiCheck } from "react-icons/bi";
+import { IoBedOutline } from "react-icons/io5";
 import {
-  FaSkiing,
-  FaPumpSoap,
-  FaShower,
-  FaFireExtinguisher,
-  FaUmbrellaBeach,
-  FaKey,
-} from "react-icons/fa";
-import { FaHouseUser, FaPeopleRoof, FaKitchenSet } from "react-icons/fa6";
-import {
-  BiSolidWasher,
-  BiSolidDryer,
-  BiSolidFirstAid,
-  BiWifi,
-  BiSolidFridge,
-  BiWorld,
-} from "react-icons/bi";
-import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from "react-icons/bs";
-import { IoDiamond } from "react-icons/io5";
-import {
-  MdOutlineVilla,
   MdMicrowave,
-  MdBalcony,
-  MdYard,
-  MdPets,
+  MdOutlineHolidayVillage,
+  MdPool,
+  MdOutlineSpaceDashboard,
+  MdWifi,
+  MdOutlineBalcony,
+  MdOutlineYard,
 } from "react-icons/md";
 import {
-  PiBathtubFill,
-  PiCoatHangerFill,
-  PiTelevisionFill,
+  PiCampfire,
+  PiDog,
+  PiFireExtinguisherBold,
+  PiFirstAid,
+  PiPark,
 } from "react-icons/pi";
-import { TbIroning3 } from "react-icons/tb";
-import {
-  GiHeatHaze,
-  GiCctvCamera,
-  GiBarbecue,
-  GiToaster,
-  GiCampfire,
-} from "react-icons/gi";
-import { AiFillCar } from "react-icons/ai";
+import { GiCctvCamera } from "react-icons/gi";
 
 export const categories = [
   {
     label: "All",
-    icon: <BiWorld />,
+    icon: <GiWorld />,
   },
   {
     img: "assets/categories/beach-view.jpg",
     label: "Beachfront",
-    icon: <TbBeach />,
+    icon: <FaUmbrellaBeach />,
     description: "This property is close to the beach!",
   },
   {
     img: "assets/categories/windmill.jpg",
     label: "Windmills",
-    icon: <GiWindmill />,
+    icon: <GiPaperWindmill />,
     description: "This property is has windmills!",
   },
   {
     img: "assets/categories/city.jpg",
     label: "Iconic cities",
-    icon: <MdOutlineVilla />,
+    icon: <MdOutlineHolidayVillage />,
     description: "This property is modern!",
   },
   {
     img: "assets/categories/countryside.jpg",
     label: "Countryside",
-    icon: <TbMountain />,
+    icon: <GiMountainCave />,
     description: "This property is in the countryside!",
   },
   {
     img: "assets/categories/pool.jpg",
     label: "Amazing Pools",
-    icon: <TbPool />,
+    icon: <MdPool />,
     description: "This is property has a beautiful pool!",
   },
   {
@@ -100,43 +98,43 @@ export const categories = [
   {
     img: "assets/categories/luxury.jpg",
     label: "Luxury",
-    icon: <IoDiamond />,
+    icon: <GiRoyalLove />,
     description: "This property is brand new and luxurious!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Camping",
-    icon: <GiForestCamp />,
+    icon: <FaCampground />,
     description: "This property offers camping activities!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Ski-in/out",
-    icon: <FaSkiing />,
+    icon: <FaSkiingNordic />,
     description: "This property has skiing activities!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Castles",
-    icon: <GiCastle />,
+    icon: <BiSolidCastle />,
     description: "This property is an ancient castle!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Caves",
-    icon: <GiCaveEntrance />,
+    icon: <GiUndergroundCave />,
     description: "This property is in a spooky cave!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Arctic",
-    icon: <BsSnow />,
+    icon: <TbSnowflake />,
     description: "This property is in arctic environment!",
   },
   {
     img: "assets/categories/island.jpg",
     label: "Desert",
-    icon: <GiCactus />,
+    icon: <GiDesert />,
     description: "This property is in the desert!",
   },
   {
@@ -152,68 +150,68 @@ export const types = [
     id: 1,
     name: "An entire place",
     description: "Guests have the whole place to themselves",
-    icon: <FaHouseUser />,
+    icon: <GiFamilyHouse />,
   },
   {
     id: 2,
     name: "Room(s)",
     description:
       "Guests have their own room in a house, plus access to shared places",
-    icon: <BsFillDoorOpenFill />,
+    icon: <IoBedOutline />,
   },
   {
     id: 3,
     name: "A Shared Room",
     description:
       "Guests sleep in a room or common area that maybe shared with you or others",
-    icon: <FaPeopleRoof />,
+    icon: <FaPeopleGroup />,
   },
 ];
 
 export const facilities = [
   {
     name: "Bath tub",
-    icon: <PiBathtubFill />,
+    icon: <GiBathtub />,
   },
   {
     name: "Personal care products",
-    icon: <FaPumpSoap />,
+    icon: <GiSoap />,
   },
   {
     name: "Outdoor shower",
-    icon: <FaShower />,
+    icon: <GiShower />,
   },
   {
     name: "Washer",
-    icon: <BiSolidWasher />,
+    icon: <GiWashingMachine />,
   },
   {
     name: "Dryer",
-    icon: <BiSolidDryer />,
+    icon: <TbWashMachine />,
   },
   {
     name: "Hangers",
-    icon: <PiCoatHangerFill />,
+    icon: <GiHanger />,
   },
   {
     name: "Iron",
-    icon: <TbIroning3 />,
+    icon: <TbIroningSteam />,
   },
   {
     name: "TV",
-    icon: <PiTelevisionFill />,
+    icon: <GiTv />,
   },
   {
     name: "Dedicated workspace",
-    icon: <BsPersonWorkspace />,
+    icon: <MdOutlineSpaceDashboard />,
   },
   {
     name: "Air Conditioning",
-    icon: <BsSnow />,
+    icon: <TbAirConditioning />,
   },
   {
     name: "Heating",
-    icon: <GiHeatHaze />,
+    icon: <GiFireplace />,
   },
   {
     name: "Security cameras",
@@ -221,23 +219,23 @@ export const facilities = [
   },
   {
     name: "Fire extinguisher",
-    icon: <FaFireExtinguisher />,
+    icon: <PiFireExtinguisherBold />,
   },
   {
     name: "First Aid",
-    icon: <BiSolidFirstAid />,
+    icon: <PiFirstAid />,
   },
   {
     name: "Wifi",
-    icon: <BiWifi />,
+    icon: <MdWifi />,
   },
   {
     name: "Cooking set",
-    icon: <FaKitchenSet />,
+    icon: <GiCampCookingPot />,
   },
   {
     name: "Refrigerator",
-    icon: <BiSolidFridge />,
+    icon: <BiFridge />,
   },
   {
     name: "Microwave",
@@ -245,38 +243,38 @@ export const facilities = [
   },
   {
     name: "Stove",
-    icon: <GiToaster />,
+    icon: <GiGasStove />,
   },
   {
     name: "Barbecue grill",
-    icon: <GiBarbecue />,
+    icon: <TbGrill />,
   },
   {
     name: "Outdoor dining area",
-    icon: <FaUmbrellaBeach />,
+    icon: <PiPark />,
   },
   {
     name: "Private patio or Balcony",
-    icon: <MdBalcony />,
+    icon: <MdOutlineBalcony />,
   },
   {
     name: "Camp fire",
-    icon: <GiCampfire />,
+    icon: <PiCampfire />,
   },
   {
     name: "Garden",
-    icon: <MdYard />,
+    icon: <MdOutlineYard />,
   },
   {
     name: "Free parking",
-    icon: <AiFillCar />,
+    icon: <FaCarTunnel />,
   },
   {
     name: "Self check-in",
-    icon: <FaKey />,
+    icon: <BiCheck />,
   },
   {
     name: " Pet allowed",
-    icon: <MdPets />,
+    icon: <PiDog />,
   },
 ];

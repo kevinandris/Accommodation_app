@@ -1,7 +1,6 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import TripList from "../../src/pages/TripList";
 
-
 test("fetches trip list data and renders it correctly", async () => {
   const mockTripList = [
     {
