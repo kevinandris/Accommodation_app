@@ -218,7 +218,7 @@ const CreateListing = () => {
               </div>
 
               <div className="location">
-                <p>Apartment, Suite etc. (if applicable)</p>
+                <p>City</p>
                 <input
                   type="text"
                   placeholder="City"
