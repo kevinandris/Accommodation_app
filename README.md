@@ -28,6 +28,9 @@
    7) Triplist page - Represents booked properties
       ![image](https://github.com/kevinandris/Accommodation_app/assets/102328858/4c6d3f80-ba78-4881-8935-959cf3fc3e92)
 
+   8) MongoDB - the database consisting bookings, listings and users information inside its collection
+      ![image](https://github.com/kevinandris/Accommodation_app/assets/102328858/9cef4b49-d240-4174-9cf1-d25139b754bd)
+
 #  To Run the Project:
    1) Client folder: npm start on IDE terminal.
    2) Server folder: npm start on IDE terminal.
