@@ -41,7 +41,7 @@
    3) react-router-dom
    4) sass
    5) redux-persist
-   6) react-beautiful-dnd\
+   6) react-beautiful-dnd
    7) @mui/icons-material
    8) @mui/material
    9) @reduxjs/toolkit
