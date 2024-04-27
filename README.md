@@ -62,3 +62,7 @@
 
 #  Personal Opinion on Improving Self-Skills in Coding:
    1) Pay extra attention wheh writing words to ensure that each work is spelled correctly.
+   2) Be active to compile the code every time I create a function to avoid blank/white screen
+      and due to unimported/outedated dependecies, files etc to save lots of time.
+   3) It is effective to gather all the necessary images, icons or font family from google font for 
+      example before implementing the code for time efficiency.
